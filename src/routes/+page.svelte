@@ -30,7 +30,7 @@
         <ThemeToggle/>
     </div>
 
-    <h1 class="text-[4rem] text-secondary-light dark:text-secondary-dark font-bold [text-shadow:0px_0px_25px_var(--tw-shadow-color)] shadow-neutral-300/40 dark:shadow-neutral-900/40">
+    <h1 class="text-[3.5rem] text-secondary-light dark:text-secondary-dark font-bold [text-shadow:0px_0px_25px_var(--tw-shadow-color)] shadow-neutral-300/40 dark:shadow-neutral-900/40">
         Chucktype<span class="text-unfocused-light dark:text-unfocused-dark">.</span><span class="text-accent-light dark:text-accent-dark">svelte</span>
     </h1>
 
