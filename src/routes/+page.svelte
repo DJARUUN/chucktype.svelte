@@ -51,7 +51,7 @@
     </button>
     </div>
 
-    <p class="text-disabled-light dark:text-disabled-dark text-sm font-[600]">
+    <p class="text-disabled-light dark:text-disabled-dark text-sm font-[600] mb-2">
         Made with love and care by <a href="https://github.com/djaruun" class="underline hover:text-unfocused-light dark:hover:text-unfocused-dark">DJARUUN</a>
     </p>
 </div>  
