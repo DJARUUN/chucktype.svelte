@@ -104,9 +104,9 @@
     async function fetchJoke() {
         try {
             const response = await fetch("https://api.chucknorris.io/jokes/random")
-            const data = await response.json()
-            console.log(`Fetched joke: ${data.value}`)
-            return data.value
+            const { value } = await response.json()
+            console.log(`Fetched joke: ${value}`)
+            return value
         }
         catch (error) { throw error }
     }
