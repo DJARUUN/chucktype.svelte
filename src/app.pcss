@@ -1,0 +1,189 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "CascadiaCode";
+    src: url("./assets/CascadiaCode.ttf");
+}
+
+
+* {
+    font-family: "CascadiaCode", ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+}
+
+
+:root {
+    --color-bg1: rgb(240, 231, 228); /* 10151d */
+    --color-bg2: rgb(240, 230, 226); /* 10151d */
+    --color1: 240, 193, 177; /* 22, 29, 40 */
+    --color2: 222, 150, 138; /* 25, 26, 58 */
+    --color3: 212, 145, 123; /* 26, 44, 68 */
+    --color4: 194, 137, 109; /* 58, 31, 86 */
+    --color5: 227, 152, 129; /* 45, 20, 54 */
+    --circle-size: 80%;
+    --blending: hard-light;
+}
+
+:root.dark {
+    --color-bg1: rgb(28, 19, 15); /* 10151d */
+    --color-bg2: rgb(21, 18, 16); /* 10151d */
+    --color1: 41, 27, 22; /* 22, 29, 40 */
+    --color2: 59, 30, 25; /* 25, 26, 58 */
+    --color3: 69, 37, 26; /* 26, 44, 68 */
+    --color4: 87, 50, 31; /* 58, 31, 86 */
+    --color5: 54, 28, 20; /* 45, 20, 54 */
+    --circle-size: 80%;
+    --blending: hard-light;
+}
+
+@keyframes moveInCircle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes moveVertical {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    50% {
+        transform: translateY(50%);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes moveHorizontal {
+    0% {
+        transform: translateX(-50%) translateY(-10%);
+    }
+
+    50% {
+        transform: translateX(50%) translateY(10%);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-10%);
+    }
+}
+
+
+.gradient-bg {
+    z-index: -50;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+    top: 0;
+    left: 0;
+}
+
+svg {
+    display: none;
+}
+
+.gradients-container {
+    z-index: -50;
+    filter: url(#goo) blur(40px);
+    width: 100%;
+    height: 100%;
+}
+
+.g1 {
+    z-index: -40;
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+
+    transform-origin: center center;
+    animation: moveVertical 30s ease infinite;
+
+    opacity: 1;
+}
+
+.g2 {
+    z-index: -40;
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+
+    transform-origin: calc(50% - 400px);
+    animation: moveInCircle 20s reverse infinite;
+
+    opacity: 1;
+}
+
+.g3 {
+    z-index: -40;
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2 + 200px);
+    left: calc(50% - var(--circle-size) / 2 - 500px);
+
+    transform-origin: calc(50% + 400px);
+    animation: moveInCircle 40s linear infinite;
+
+    opacity: 1;
+}
+
+.g4 {
+    z-index: -40;
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+
+    transform-origin: calc(50% - 200px);
+    animation: moveHorizontal 40s ease infinite;
+
+    opacity: 0.7;
+}
+
+.g5 {
+    z-index: -40;
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: calc(var(--circle-size) * 2);
+    height: calc(var(--circle-size) * 2);
+    top: calc(50% - var(--circle-size));
+    left: calc(50% - var(--circle-size));
+
+    transform-origin: calc(50% - 800px) calc(50% + 200px);
+    animation: moveInCircle 20s ease infinite;
+
+    opacity: 1;
+}
