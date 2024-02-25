@@ -25,7 +25,7 @@
         <div class="g5"></div>
     </div>
 </div>
-<div class="top-0 left-0 justify-between absolute h-svh w-full flex flex-col items-center transition-all ease-out duration-[400ms] text-foreground selection:bg-accent-light dark:selection:bg-accent-dark selection:text-foreground-light dark:selection:text-foreground-dark">
+<div class="top-0 left-0 justify-between absolute h-svh w-full flex flex-col items-center text-foreground selection:bg-accent-light dark:selection:bg-accent-dark selection:text-foreground-light dark:selection:text-foreground-dark">
     <div>
         <ThemeToggle/>
     </div>
